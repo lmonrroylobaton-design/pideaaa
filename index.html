@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pidea - Descargar App Oficial</title>
+  <meta name="description" content="Descarga la aplicación oficial de Pidea para Android de forma rápida y segura.">
+  <link rel="icon" type="image/jpeg" href="logo_pidea.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- QR Code Generator CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-orange-500 selection:text-white">
+
+  <!-- Header / Nav -->
+  <header class="w-full max-w-md mx-auto pt-8 px-6 text-center">
+    <div class="relative inline-block mb-3">
+      <img src="logo_pidea.jpg" alt="Logo Oficial Pidea" 
+           class="w-24 h-24 object-cover rounded-3xl shadow-2xl shadow-orange-500/30 border-2 border-orange-500/30 mx-auto">
+      <div class="absolute -bottom-1 -right-1 bg-emerald-500 text-white rounded-full p-1 border-2 border-slate-900" title="Verificado">
+        <i class="fa-solid fa-check text-xs block w-4 h-4 text-center leading-4"></i>
+      </div>
+    </div>
+    <h1 class="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-orange-400 via-amber-300 to-rose-400 bg-clip-text text-transparent">
+      Pidea
+    </h1>
+    <p class="text-slate-400 text-sm mt-1">Haz tus pedidos y reservas fácil y rápido</p>
+  </header>
+
+  <!-- Main Card -->
+  <main class="w-full max-w-md mx-auto px-6 py-5">
+    <div class="bg-slate-800/80 backdrop-blur-xl border border-slate-700/80 rounded-3xl p-6 shadow-2xl space-y-6">
+      
+      <!-- App Badge & Info -->
+      <div class="flex items-center justify-between pb-4 border-b border-slate-700/60">
+        <div class="flex items-center space-x-3">
+          <img src="logo_pidea.jpg" alt="Pidea Icon" class="w-12 h-12 object-cover rounded-2xl border border-slate-700">
+          <div>
+            <h2 class="font-bold text-white text-base">Pidea App</h2>
+            <span class="inline-flex items-center gap-1 text-xs text-emerald-400 font-medium">
+              <i class="fa-solid fa-shield-halved text-xs"></i> Versión Oficial Verificada
+            </span>
+          </div>
+        </div>
+        <span class="bg-slate-700/70 text-slate-300 text-xs px-2.5 py-1 rounded-full font-mono">v1.0.0</span>
+      </div>
+
+      <!-- Quick Specs -->
+      <div class="grid grid-cols-3 gap-2 text-center">
+        <div class="bg-slate-900/60 p-2.5 rounded-2xl border border-slate-700/40">
+          <span class="text-xs text-slate-400 block">Tamaño</span>
+          <span class="text-sm font-semibold text-slate-200">~25 MB</span>
+        </div>
+        <div class="bg-slate-900/60 p-2.5 rounded-2xl border border-slate-700/40">
+          <span class="text-xs text-slate-400 block">Android</span>
+          <span class="text-sm font-semibold text-slate-200">8.0 o +</span>
+        </div>
+        <div class="bg-slate-900/60 p-2.5 rounded-2xl border border-slate-700/40">
+          <span class="text-xs text-slate-400 block">Licencia</span>
+          <span class="text-sm font-semibold text-emerald-400">Gratis</span>
+        </div>
+      </div>
+
+      <!-- Main Download Action -->
+      <div class="space-y-3">
+        <a id="downloadBtn" href="./Pidea.apk" download="Pidea.apk"
+           class="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 active:scale-[0.98] transition-all text-white font-bold py-4 px-6 rounded-2xl shadow-lg shadow-orange-500/30 text-lg">
+          <i class="fa-solid fa-cloud-arrow-down text-xl animate-bounce"></i>
+          <span>Descargar APK para Android</span>
+        </a>
+        <p class="text-center text-xs text-slate-400">
+          Descarga directa y segura desde el servidor
+        </p>
+      </div>
+
+      <!-- QR Code Section for Sharing -->
+      <div class="bg-slate-900/70 border border-slate-700/50 rounded-2xl p-4 text-center">
+        <h3 class="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
+          <i class="fa-solid fa-qrcode mr-1 text-orange-400"></i> Código QR de esta web
+        </h3>
+        <p class="text-xs text-slate-400 mb-3">Escanea con la cámara de tu celular para abrir y descargar:</p>
+        <div class="inline-block p-3 bg-white rounded-2xl shadow-md">
+          <div id="qrcode"></div>
+        </div>
+      </div>
+
+      <!-- Installation Guide Accordion -->
+      <div class="border-t border-slate-700/60 pt-4">
+        <h3 class="font-semibold text-sm text-slate-200 mb-3 flex items-center gap-2">
+          <i class="fa-solid fa-circle-question text-orange-400"></i> ¿Cómo instalar el APK?
+        </h3>
+        <ol class="space-y-3 text-xs text-slate-300">
+          <li class="flex items-start gap-2.5">
+            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-orange-500/20 text-orange-400 font-bold flex items-center justify-center text-[10px]">1</span>
+            <span>Toca el botón <b>"Descargar APK"</b> de arriba.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-orange-500/20 text-orange-400 font-bold flex items-center justify-center text-[10px]">2</span>
+            <span>Si el navegador muestra <i>"El archivo puede ser dañino"</i>, presiona <b>"Descargar de todos modos"</b> (mensaje estándar de Android al instalar fuera de Play Store).</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <span class="flex-shrink-0 w-5 h-5 rounded-full bg-orange-500/20 text-orange-400 font-bold flex items-center justify-center text-[10px]">3</span>
+            <span>Abre la descarga y confirma <b>"Permitir desde esta fuente"</b> o <b>"Instalar de todas formas"</b>.</span>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full max-w-md mx-auto text-center py-5 px-6 text-xs text-slate-500">
+    <p>© 2026 Pidea. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Generar automáticamente el QR con la URL actual de la página
+    window.addEventListener('DOMContentLoaded', () => {
+      const currentUrl = window.location.href;
+      new QRCode(document.getElementById("qrcode"), {
+        text: currentUrl,
+        width: 140,
+        height: 140,
+        colorDark : "#0f172a",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+      });
+    });
+  </script>
+</body>
+</html>
